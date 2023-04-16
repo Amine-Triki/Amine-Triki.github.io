@@ -1,0 +1,87 @@
+:root{
+    --main-color:#F7F8F9;
+    --light-color:#a8c9fa;
+    --second-color:0000ff;
+}
+body {
+    font-family: 'Lemonada', cursive;
+}
+
+/* start nav*/
+.navbar {
+    background-color: var(--light-color);
+}
+.navbar .navbar-nav .nav-link{
+    color:var(--main-color);
+}
+.navbar .navbar-nav .nav-link.active ,
+.navbar .navbar-nav .nav-link:focus ,
+.navbar .navbar-nav .nav-link:hover
+{
+    color:var(--second-color);
+}
+/* end nav*/
+
+/* start landing*/
+.landing{
+    background-color: var(--light-color);
+    min-height: calc(100vh - 78px);
+}
+
+section .container h3 {
+max-width: 370px;
+}
+/* end landing*/
+
+/* start Skills*/
+.main-title::after {
+    content:"";
+    width: 60px;
+    height: 2px;
+    background-color: var(--light-color);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: ligne;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+/*  start keyframes */
+@keyframes ligne {
+    0% {
+       transform-origin: right bottom;
+    }
+   
+    50%{
+        transform: rotateX(90deg);
+    }
+    100%{
+        transform-origin: left bottom;
+    }
+    
+}
+/* end keyframes */
+
+.progress {
+    position: relative;
+    height: 20px;
+    background-color: #fff;
+    margin: 10px;
+  }
+  .progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #cd5c5c;
+    transition: width 0.3s linear;
+  }
+/* end Skills*/
+
+/*  start footer */
+footer {
+    background-color: var(--light-color);
+}
+
+/* end footer*/
