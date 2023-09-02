@@ -85,3 +85,15 @@ footer {
 }
 
 /* end footer*/
+
+
+/*  start contact */
+form , #touch{ 
+    flex: 1;
+}
+@media  (max-width: 992px) {
+    #flex {
+        flex-direction: column;
+    }
+
+/*end contact */
