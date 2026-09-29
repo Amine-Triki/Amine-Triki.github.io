@@ -8,6 +8,7 @@ const spinnerWrapper = document.getElementById("spinner-wrapper");
 const featuredProjects = document.getElementById("featured-projects");
 const allProjects = document.getElementById("all-projects");
 const categoryFilters = document.getElementById("category-filters");
+const otherProjectsSection = document.getElementById("other-projects-section");
 
 function externalLink(url, className, label, icon = "") {
   return `<a href="${url}" target="_blank" rel="noreferrer" class="${className}">${icon}${label}</a>`;
@@ -111,13 +112,15 @@ async function loadProjects() {
 
     renderProjects(projects.filter((project) => project.featured === true), featuredProjects, true);
 
+    const nonFeatured = projects.filter((project) => project.featured !== true);
+    otherProjectsSection.hidden = nonFeatured.length === 0;
+
     const categories = ["All", ...new Set(projects.map((project) => project.category))];
     categoryFilters.innerHTML = categories
       .map((category, index) => `<button type="button" class="btn btn-sm btn-outline-primary category-filter ${index === 0 ? "active" : ""}" data-category="${category}">${category}</button>`)
       .join("");
 
     const renderAllProjects = (category = "All") => {
-      const nonFeatured = projects.filter((project) => project.featured !== true);
       renderProjects(
         category === "All" ? nonFeatured : nonFeatured.filter((project) => project.category === category),
         allProjects
