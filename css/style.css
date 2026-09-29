@@ -86,21 +86,40 @@ form , #touch{
 /*end contact */
 
 
-    #projects-grid {
-      display: grid;
-      gap: 1.5rem;
-      justify-content: center;
-      grid-template-columns: repeat(auto-fill, 300px);
-    }
     .card img {
       height: 160px;
       object-fit: cover;
       width: 100%;
     }
-    .tab-btn.active {
+        .featured-project img {
+            height: 280px;
+        }
+        .category-filter.active {
       background-color: #0d6efd;
       color: #fff;
     }
+        .project-category {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+        }
+        .modal-main-image {
+            max-height: 60vh;
+        }
+        .screenshot-thumbnail {
+            border: 2px solid transparent;
+            background: transparent;
+            padding: 0;
+            flex: 0 0 auto;
+        }
+        .screenshot-thumbnail.active {
+            border-color: var(--main-color);
+        }
+        .screenshot-thumbnail img {
+            width: 72px;
+            height: 72px;
+            object-fit: cover;
+        }
     #spinner-wrapper {
       min-height: 50vh;
       display: flex;
